@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        .campo-grupo {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .campo-grupo:last-child {
+            border-bottom: none;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input[type="text"], input[type="tel"], input[type="url"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .tarefa-caixa {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        .tarefa-caixa a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .tarefa-caixa a:hover {
+            text-decoration: underline;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            color: #d9534f;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .checkbox-label input {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+        .aviso {
+            font-size: 0.85em;
+            color: #d9534f;
+            margin-top: 5px;
+            display: block;
+        }
+        .opcional {
+            color: #888;
+            font-weight: normal;
+            font-size: 0.85em;
+        }
+        .btn-localizacao {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+        .btn-localizacao:hover {
+            background-color: #0056b3;
+        }
+        #statusLocalizacao {
+            font-size: 0.85em;
+            color: #28a745;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        button[type="submit"]:not(:disabled):hover {
+            background-color: #1ebe57;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>➡️ PRECISO DESSAS INFORMAÇÕES PARA FAZER O SEU CADASTRO</h2>
+    
+    <form id="cadastroForm">
+        
+        <!-- 1️⃣ NOME -->
+        <div class="campo-grupo">
+            <label>1️⃣ POR FAVOR, INFORME SEU NOME COMPLETO:</label>
+            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+        </div>
+
+        <!-- 2️⃣ NÚMERO CADASTRADO -->
+        <div class="campo-grupo">
+            <label>2️⃣ INFORME O NÚMERO QUE QUE INDICOU O NOSSO CONTATO (WhatsApp):</label>
+            <input type="tel" id="telefone" placeholder="(DDD) 9XXXX-XXXX" required>
+        </div>
+
+        <!-- 3️⃣ INSTAGRAM MEXICANO -->
+        <div class="campo-grupo">
+            <label>3️⃣ SIGA NOSSO PERFIL NO INSTAGRAM E ENVIE UM 👍🏻 NO DIRECT:</label>
+            <div class="tarefa-caixa">
+                <a href="https://www.instagram.com/mexicanoo2023?igsh=cWZndW84OWEyN2J4" target="_blank">🔗 Clique aqui para abrir o Instagram</a>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="checkInsta" required>
+                    Confirmo que segui e enviei o 👍🏻 no direct
+                </label>
+            </div>
+        </div>
+
+        <!-- 4️⃣ SEU INSTAGRAM -->
+        <div class="campo-grupo">
+            <label>4️⃣ ENVIE O LINK DO SEU PERFIL DO INSTAGRAM: 🔗</label>
+            <input type="url" id="seuInstagram" placeholder="https://instagram.com/seuperfil" required>
+        </div>
+
+        <!-- 5️⃣ SEU FACEBOOK -->
+        <div class="campo-grupo">
+            <label>5️⃣ ENVIE O LINK DO SEU PERFIL DO FACEBOOK: 🔗</label>
+            <input type="url" id="seuFacebook" placeholder="https://facebook.com/seuperfil" required>
+        </div>
+
+        <!-- 6️⃣ SEU TELEGRAM -->
+        <div class="campo-grupo">
+            <label>6️⃣ ENVIE O LINK DO SEU TELEGRAM: 🔗 <span class="opcional">(Opcional se tiver)</span></label>
+            <input type="url" id="seuTelegram" placeholder="https://t.me/seuperfil">
+        </div>
+
+        <!-- 7️⃣ LOCALIZAÇÃO -->
+        <div class="campo-grupo">
+            <label>7️⃣ SUA LOCALIZAÇÃO ATUAL: 📍</label>
+            <button type="button" class="btn-localizacao" id="btnLocal">📍 Capturar minha localização atual</button>
+            <div id="statusLocalizacao"></div>
+            <input type="hidden" id="linkLocal" required>
+            <span class="aviso">* Você também deverá enviar a localização em TEMPO REAL no WhatsApp após enviar o formulário.</span>
+        </div>
+
+        <!-- 8️⃣ ENDEREÇO -->
+        <div class="campo-grupo">
+            <label>8️⃣ INFORME O NOME DA RUA, NÚMERO DA RESIDÊNCIA E BAIRRO: 🏠</label>
+            <input type="text" id="endereco" placeholder="Ex: Rua das Flores, 123, Bairro Centro" required>
+        </div>
+
+        <!-- 9️⃣ PROFISSÃO E FOTO -->
+        <div class="campo-grupo">
+            <label>9️⃣ INFORME SUA PROFISSÃO E UMA FOTO DO SEU TRABALHO: 💼🏻</label>
+            <input type="text" id="profissao" placeholder="Qual a sua profissão?" style="margin-bottom: 10px;" required>
+            <input type="file" id="fotoTrabalho" accept="image/*" required>
+            <span class="aviso">* Atenção: Ao clicar no botão verde no final, você deverá ENVIAR ESSA FOTO manualmente no chat do WhatsApp!</span>
+        </div>
+
+        <!-- 🔟 CANAIS OBRIGATÓRIOS -->
+        <div class="campo-grupo">
+            <label>🔟 É OBRIGATÓRIO SEGUIR ESSES 3 CANAIS:</label>
+            <div class="tarefa-caixa">
+                <a href="https://whatsapp.com/channel/0029Vb86hz11iUxZNzmvkW1J" target="_blank">📲 Canal 1 (WhatsApp)</a>
+                <a href="https://www.instagram.com/channel/AbZf45PFBC9Y1hfu/" target="_blank">📲 Canal 2 (Instagram)</a>
+                <a href="https://t.me/+GipOxVzH7t0yYzkx" target="_blank">📲 Canal 3 (Telegram)</a>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="checkCanais" required>
+                    Confirmo que já entrei nos 3 canais acima
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" id="btnEnviar" disabled>Enviar Cadastro para o WhatsApp</button>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('cadastroForm');
+    const btnEnviar = document.getElementById('btnEnviar');
+    const btnLocal = document.getElementById('btnLocal');
+    const inputLocal = document.getElementById('linkLocal');
+    const statusLocalizacao = document.getElementById('statusLocalizacao');
+
+    // Pegar localização
+    btnLocal.addEventListener('click', () => {
+        statusLocalizacao.innerText = "Buscando localização...";
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    inputLocal.value = `https://www.google.com/maps?q=${lat},${lon}`;
+                    statusLocalizacao.style.color = "#28a745";
+                    statusLocalizacao.innerText = "✅ Localização capturada!";
+                    checarFormulario();
+                },
+                (error) => {
+                    inputLocal.value = "Usuário não permitiu o acesso ao GPS.";
+                    statusLocalizacao.style.color = "#d9534f";
+                    statusLocalizacao.innerText = "❌ Acesso negado. A localização deverá ser pedida no chat.";
+                    checarFormulario();
+                }
+            );
+        } else {
+            inputLocal.value = "Navegador não suporta GPS.";
+            statusLocalizacao.innerText = "❌ Navegador sem suporte a GPS.";
+            checarFormulario();
+        }
+    });
+
+    // Função que verifica se tudo foi preenchido para liberar o botão
+    function checarFormulario() {
+        if (form.checkValidity()) {
+            btnEnviar.disabled = false;
+        } else {
+            btnEnviar.disabled = true;
+        }
+    }
+
+    form.addEventListener('input', checarFormulario);
+
+    // Função para formatar e enviar para o WhatsApp
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const telefone = document.getElementById('telefone').value;
+        const seuInstagram = document.getElementById('seuInstagram').value;
+        const seuFacebook = document.getElementById('seuFacebook').value;
+        const seuTelegram = document.getElementById('seuTelegram').value || "Não informado";
+        const localizacao = document.getElementById('linkLocal').value;
+        const endereco = document.getElementById('endereco').value;
+        const profissao = document.getElementById('profissao').value;
+
+        // O número que vai RECEBER o cadastro (Seu WhatsApp)
+        const numeroDestino = "5551981577808";
+
+        let mensagem = `*➡️ NOVO CADASTRO RECEBIDO*\n\n`;
+        mensagem += `*1️⃣ Nome:* ${nome}\n`;
+        mensagem += `*2️⃣ Número que indicou:* ${telefone}\n`;
+        mensagem += `*3️⃣ Perfil Mexicano:* ✅ Seguiu e enviou 👍🏻\n`;
+        mensagem += `*4️⃣ Instagram:* ${seuInstagram}\n`;
+        mensagem += `*5️⃣ Facebook:* ${seuFacebook}\n`;
+        mensagem += `*6️⃣ Telegram:* ${seuTelegram}\n`;
+        mensagem += `*7️⃣ Localização Atual:* ${localizacao}\n`;
+        mensagem += `*8️⃣ Endereço:* ${endereco}\n`;
+        mensagem += `*9️⃣ Profissão:* ${profissao}\n`;
+        mensagem += `*🔟 Canais:* ✅ Confirmou que segue os 3 canais\n\n`;
+        mensagem += `⚠️ _AGORA OS PRINTS E A IMAGENS PRA FINALIZAR:_\n`;
+        mensagem += `_Peça para o usuário enviar agora a **FOTO DO TRABALHO E UMA FOTO DE AGORA** e a **PRINT Q MANDO 👍🏻 NO ISTA E ENTRO E SEGUIU O CANAL MAIS A LOCALIZAÇÃO EM TEMPO REAL**._`;
+
+        const textoCodificado = encodeURIComponent(mensagem);
+        const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${textoCodificado}`;
+
+        window.open(urlWhatsApp, '_blank');
+    });
+</script>
+
+</body>
+</html>
